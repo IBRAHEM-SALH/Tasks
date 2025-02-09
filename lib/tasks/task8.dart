@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 
-class Product extends StatefulWidget {
-  const Product({super.key});
+class Post extends StatefulWidget {
+  const Post({super.key});
 
   @override
-  State<Product> createState() => _ProductState();
+  State<Post> createState() => _PostState();
 }
 
-class _ProductState extends State<Product> {
+class _PostState extends State<Post> {
   String sample = "";
   //**************************************** function name and returned data typ 1
-  //void fetchAllProducts()async {}
-  void fetchAllProducts() async {
+  //void fetchAllPosts()async {}
+  void fetchAllPosts() async {
     // ************************************** past code from postman (implementation)2
     var request =
         http.Request('GET', Uri.parse('https://jsonplaceholder.typicode.com/posts'));
@@ -32,7 +32,7 @@ class _ProductState extends State<Product> {
   // void callOpenAiApi(data (video to data )) async {
   //   // ************************************** past code from postman (implementation)2
   //   var request =
-  //       http.Request('POST', Uri.parse('https://fakestoreapi.com/products'));
+  //       http.Request('POST', Uri.parse('https://fakestoreapi.com/Posts'));
 
   //   http.StreamedResponse response = await request.send();
 
@@ -51,7 +51,7 @@ class _ProductState extends State<Product> {
     // TODO: implement initState
     super.initState();
     // call async function **********************3
-    fetchAllProducts();
+    fetchAllPosts();
   }
 
   @override
