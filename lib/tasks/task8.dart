@@ -17,7 +17,7 @@ class _ProductState extends State<Product> {
   void fetchAllProducts() async {
     // ************************************** past code from postman (implementation)2
     var request =
-        http.Request('GET', Uri.parse('https://fakestoreapi.com/products'));
+        http.Request('GET', Uri.parse('https://jsonplaceholder.typicode.com/posts'));
 
     http.StreamedResponse response = await request.send();
 
