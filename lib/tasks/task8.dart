@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 
-class Task8 extends StatefulWidget {
-  const Task8({super.key});
+class Product extends StatefulWidget {
+  const Product({super.key});
 
   @override
-  State<Task8> createState() => _Task8State();
+  State<Product> createState() => _ProductState();
 }
 
-class _Task8State extends State<Task8> {
+class _ProductState extends State<Product> {
   String sample = "";
   //**************************************** function name and returned data typ 1
   //void fetchAllProducts()async {}
