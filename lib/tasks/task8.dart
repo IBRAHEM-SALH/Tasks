@@ -10,7 +10,7 @@ class ProductsPage extends StatefulWidget {
 }
 
 class _ProductsPageState extends State<ProductsPage> {
-  List<dynamic> products = []; // تخزين المنتجات
+  List<dynamic> products = []; 
 
   void fetchProducts() async {
     var response =
@@ -18,7 +18,7 @@ class _ProductsPageState extends State<ProductsPage> {
 
     if (response.statusCode == 200) {
       setState(() {
-        products = json.decode(response.body); // تحويل JSON إلى List
+        products = json.decode(response.body); 
       });
     } else {
       print("Error: ${response.reasonPhrase}");
@@ -39,7 +39,7 @@ class _ProductsPageState extends State<ProductsPage> {
         backgroundColor: Colors.deepPurple,
       ),
       body: products.isEmpty
-          ? const Center(child: CircularProgressIndicator()) // تحميل البيانات
+          ? const Center(child: CircularProgressIndicator()) 
           : Padding(
               padding: const EdgeInsets.all(8.0),
               child: GridView.builder(

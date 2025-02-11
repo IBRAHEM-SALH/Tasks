@@ -1,9 +1,27 @@
 import 'package:flutter/material.dart';
+
+// import 'tasks/task1.dart';
+// import 'tasks/task2.dart';
+import 'provider/login_provider.dart';
+import 'provider/product_provider.dart';
+import 'tasks/task5.dart';
+import 'tasks/task6.dart';
+import 'tasks/task7.dart';
 import 'tasks/task8.dart';
-import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
+
+import 'viwes/product_view_widget.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ProductProvider()),
+        ChangeNotifierProvider(create: (context) => LoginProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,8 +36,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ProductsPage(),
+      // this is task selector
+      //home: const Task1(),
+      //home: const Task2(),
+      home: ProductViewWidget(),
     );
   }
 }
-
