@@ -1,50 +1,89 @@
 import 'package:flutter/material.dart';
-import 'package:tasks/models/product.dart';
 
-class Details extends StatelessWidget {
-  final Product product;
-  const Details({super.key, required this.product});
+class ProductDetails extends StatelessWidget {
+  final dynamic product;
+
+  const ProductDetails({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Product Details")),
-      // 1 title  text
-      // 2 image image . network
-      // 3 price text string
-      // 4 description string
-      // 5 category string
-      // 6 rating string
-      body: Center(
-        child: Container(
-          padding: EdgeInsets.all(15),
+    return Center(
+      child: Card(
+        elevation: 5,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
-               Image.network(product.image ?? "NO image",
-                  width: 100, height: 100, fit: BoxFit.cover),
-              Text(product.title ?? "NO title",
-                  style: const TextStyle(fontSize: 16, color: Colors.orange)),
-              SizedBox(height: 10),
-            
-              Text(product.price?.toString() ?? "NOt found price ",
-                  style: const TextStyle(fontSize: 16)),
-              SizedBox(
-                height: 10,
+              // صورة المنتج
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(
+                  product.image ?? "",
+                  width: 150,
+                  height: 200,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    width: double.infinity,
+                    height: 150,
+                    color: Colors.grey[300],
+                    child: const Icon(Icons.image_not_supported, size: 50, color: Colors.grey),
+                  ),
+                ),
               ),
-              Text(product.description ?? "not found description",
-                  style: const TextStyle(fontSize: 16, color: Colors.orange)),
-              SizedBox(
-                height: 10,
-              ),
-              Text(product.category ?? " no category",
-                  style: const TextStyle(fontSize: 16, color: Colors.orange)),
-              SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 15),
+
+              // اسم المنتج
               Text(
-                  product.rating?.rate?.toStringAsFixed(1) ??
-                      "not found rating",
-                  style: const TextStyle(fontSize: 16, color: Colors.orange)),
+                product.title ?? "No title available",
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              const SizedBox(height: 10),
+
+              // السعر
+              Text(
+                product.price != null ? "\$${product.price!.toStringAsFixed(2)}" : "Price not available",
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+
+              // الوصف
+              Text(
+                product.description ?? "No description available",
+                style: const TextStyle(fontSize: 14, color: Colors.black87),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
+              const SizedBox(height: 10),
+
+              // الفئة
+              Row(
+                children: [
+                  const Icon(Icons.category, color: Colors.blueGrey, size: 20),
+                  const SizedBox(width: 5),
+                  Text(
+                    product.category ?? "No category",
+                    style: const TextStyle(fontSize: 14, color: Colors.blueGrey),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+
+              // التقييم
+              Row(
+                children: [
+                  const Icon(Icons.star, color: Colors.orange, size: 20),
+                  const SizedBox(width: 5),
+                  Text(
+                    product.rating?.rate?.toStringAsFixed(1) ?? "No rating",
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.orange),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

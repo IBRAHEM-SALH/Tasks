@@ -67,7 +67,7 @@ class _ProductViewWidgetState extends State<ProductViewWidget> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Details(product: product),
+                        builder: (context) => ProductDetails(product: product),
                       ),
                     );
                   },
