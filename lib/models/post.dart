@@ -19,7 +19,7 @@ class Root {
     }
 
     Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = Map<String, dynamic>();
+        final Map<String, dynamic> data = <String, dynamic>{};
         data['userId'] = userId;
         data['id'] = id;
         data['title'] = title;

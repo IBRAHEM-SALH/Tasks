@@ -12,7 +12,7 @@ class Task7 extends StatefulWidget {
 
 class _Task7State extends State<Task7> {
   Widget _child = CircularProgressIndicator();
-  Widget _child2 = Icon(Icons.home);
+  final Widget _child2 = Icon(Icons.home);
   var listOfProducts = [];
 
   void callOpenAiApi() async {
@@ -35,12 +35,10 @@ class _Task7State extends State<Task7> {
   //var studentsNumbers = [07854545454, 079953535353];
   // await http request to URI (SMS SERVER) {SMSMESAGE + LIST OF RECIVERS}
   // }
-  /**
-   * void fetchProducts() async {
-   * var response = await https(uri)
-   * update data (listOfProducts) or Widgets 
-   * }
-   */
+  /// void fetchProducts() async {
+  /// var response = await https(uri)
+  /// update data (listOfProducts) or Widgets 
+  /// }
   @override
   void initState() {
     super.initState();

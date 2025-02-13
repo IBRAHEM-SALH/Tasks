@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 // import 'tasks/task2.dart';
 import 'provider/login_provider.dart';
 import 'provider/product_provider.dart';
-import 'tasks/task5.dart';
-import 'tasks/task6.dart';
-import 'tasks/task7.dart';
-import 'tasks/task8.dart';
 import 'package:provider/provider.dart';
 
 import 'viwes/product_view_widget.dart';
