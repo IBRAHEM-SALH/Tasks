@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import'package:photo_view/photo_view.dart';
 
 class ProductDetails extends StatelessWidget {
   final dynamic product;
 
-  const ProductDetails({Key? key, required this.product}) : super(key: key);
+  const ProductDetails({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,6 @@ class ProductDetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              // صورة المنتج
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.network(
@@ -35,7 +36,6 @@ class ProductDetails extends StatelessWidget {
               ),
               const SizedBox(height: 15),
 
-              // اسم المنتج
               Text(
                 product.title ?? "No title available",
                 style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
@@ -44,14 +44,12 @@ class ProductDetails extends StatelessWidget {
               ),
               const SizedBox(height: 10),
 
-              // السعر
               Text(
                 product.price != null ? "\$${product.price!.toStringAsFixed(2)}" : "Price not available",
                 style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
 
-              // الوصف
               Text(
                 product.description ?? "No description available",
                 style: const TextStyle(fontSize: 14, color: Colors.black87),
@@ -60,7 +58,6 @@ class ProductDetails extends StatelessWidget {
               ),
               const SizedBox(height: 10),
 
-              // الفئة
               Row(
                 children: [
                   const Icon(Icons.category, color: Colors.blueGrey, size: 20),
@@ -73,7 +70,6 @@ class ProductDetails extends StatelessWidget {
               ),
               const SizedBox(height: 10),
 
-              // التقييم
               Row(
                 children: [
                   const Icon(Icons.star, color: Colors.orange, size: 20),

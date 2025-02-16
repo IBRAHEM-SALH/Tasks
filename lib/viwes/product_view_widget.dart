@@ -16,6 +16,7 @@ class ProductViewWidget extends StatefulWidget {
 }
 
 class _ProductViewWidgetState extends State<ProductViewWidget> {
+  @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -27,6 +28,14 @@ class _ProductViewWidgetState extends State<ProductViewWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: () {
+              Provider.of<ProductProvider>(context, listen: false).fetchAllProducts();
+            },
+          ),
+        ],
         title: Text("Product View Widget"),
       ),
       body: Consumer<ProductProvider>(
