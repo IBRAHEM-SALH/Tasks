@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-@pragma('vm:entry-point') // Optional, helps with certain Flutter build configurations
+// task15 anematation
 class Task15 extends StatefulWidget {
   @override
   _Task15State createState() => _Task15State();
