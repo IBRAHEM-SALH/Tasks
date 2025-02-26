@@ -54,6 +54,8 @@ class _Task15State extends State<Task15> with SingleTickerProviderStateMixin {
 
 //second screen
 class Task16 extends StatelessWidget {
+  const Task16({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -64,6 +66,8 @@ class Task16 extends StatelessWidget {
 }
 
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,6 +95,8 @@ class FirstScreen extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

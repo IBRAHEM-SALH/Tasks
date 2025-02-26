@@ -4,7 +4,7 @@ class Task16 extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
 
-  const Task16({required this.text, required this.onPressed, Key? key}) : super(key: key);
+  const Task16({required this.text, required this.onPressed, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,8 @@ class Task16 extends StatelessWidget {
 
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

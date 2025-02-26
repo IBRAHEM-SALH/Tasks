@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "754795721998",
+    "project_id": "tasks-ibrahem",
+    "storage_bucket": "tasks-ibrahem.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754795721998:android:9ad14191386b5243b6935f",
+        "android_client_info": {
+          "package_name": "com.example.tasks"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi3g0NEf1UoQD-Rvqh-W2dv39nW4sY4Xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
